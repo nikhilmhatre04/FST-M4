@@ -1,0 +1,29 @@
+/* Commands to be run under Powershell script*\
+Step 1 : 
+	vim txtFile.txt
+Step 2 : 
+	cat txtFile.txt
+Step 3 : 
+	vim csvFile.csv
+Step 4 :
+	cat csvFile.csv
+/* Commands to be run under Hadoop shell\
+Step 5 : 
+	hdfs dfs -mkdir /user/TextData
+Step 6 :
+	hdfs dfs -ls /user
+Step 7 : 
+	hdfs dfs -put ./txtFile.txt /user/TextData
+Step 7 : 
+	hdfs dfs -put ./csvFile.csv /user/TextData
+Step 8 : 
+	hdfs dfs -ls /user/TextData
+Step 9 : 
+	hdfs dfs -cat /user/TextData/txtFile.txt
+Step 10:
+	hdfs dfs -cat /user/TextData/csvFile.csv
+Step 11: 
+	hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/TextData/txtFile.txt
+Step 12:
+	hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/TextData/csvFile.csv
+	
