@@ -1,0 +1,14 @@
+
+hive> CREATE TABLE files (line STRING);
+
+hive> LOAD DATA LOCAL INPATH '/file01.txt' INTO TABLE files;
+
+
+$ hive> CREATE TABLE word_counts AS
+       SELECT word, count(1) AS count FROM
+       (SELECT explode(split(line, ' ')) AS word FROM files) 
+       GROUP BY word
+       ORDER BY word
+
+
+SELECT * FROM word_count;
