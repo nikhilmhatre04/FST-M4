@@ -21,3 +21,10 @@ SELECT COUNT(*) FROM employee;
 SELECT  id, name FROM employee;
 
 SELECT * FROM employee WHERE salary > 30000;
+
+
+INSERT OVERWRITE LOCAL DIRECTORY '/export' 
+    ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+     SELECT * FROM employee;
+
+cat /user/root/output/export/output.csv
