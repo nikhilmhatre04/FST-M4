@@ -1,0 +1,19 @@
+-- Activity 1
+
+Episode IV
+
+CREATE TABLE episodeIV (name STRING, line String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/episodeIV_dialouges.txt' INTO TABLE episodeIV;
+SELECT names, COUNT(names) AS numberoflines from episodeIV GROUP BY names ORDER BY numberoflines;
+
+Episode V
+
+CREATE TABLE episodeV (name STRING, line String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/episodeV_dialouges.txt' INTO TABLE episodeV;
+SELECT names, COUNT(names) AS numberoflines from episodeIV GROUP BY names ORDER BY numberoflines;
+
+Episode IV
+
+CREATE TABLE episodeVI (name STRING, line String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+LOAD DATA LOCAL INPATH '/episodeVI_dialouges.txt' INTO TABLE episodeVI;
+SELECT names, COUNT(names) AS numberoflines from episodeIV GROUP BY names ORDER BY numberoflines;
